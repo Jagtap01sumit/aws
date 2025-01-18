@@ -34,3 +34,18 @@
 ### History of AWS 
 ![image](https://github.com/user-attachments/assets/6738ac60-d7fb-481a-8f00-f9fc679dc318)
 
+
+
+### AWS Global Services:
+###### Identity and Access Management (IAM)
+###### Route 53 (DNS Services)
+###### CloudFront (Content Delivery Network)
+###### WAF (Web Application FireWall)
+
+### Most AWS Services are REgion-scoped:
+###### Amazon EC2 (Infrastructure as a Service)
+###### Elastic Beanstlk (Platform as a Service)
+###### Lambda (function as a Service)
+###### Rekognition (Software as a Service)
+
+
