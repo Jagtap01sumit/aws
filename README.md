@@ -112,7 +112,16 @@
        * Embedded within your application
        * Supports
            * SDKs (JavaScript, Python, PHP, .NET, Ruby, Java, Go, Node.js, C++)
-   
+
+
+### How to create and use access key
+###### IAM > Users > "username" > Create access key
+###### IN CMD: 
+      - aws configure
+      - "Enter AWS Secret Access ID"
+      - "Enter AWS Secret Access Key"
+      - "Default region name" ex. ap-south-1 -> Mumbai
+      - aws iam list-users
  
 
 
