@@ -123,6 +123,58 @@
       - "Default region name" ex. ap-south-1 -> Mumbai
       - aws iam list-users
  
+### IAM Section - Summary
+###### Users: Mapped to a physical user, has a password for AWS Console
+###### Groups: Contains users only
+###### Policies: JSON Document that outlines pemissions for users or groups
+###### Roles: for EC2  Instance or AWS Services
+###### Security: MFA + Password Policy
+###### AWS CLI: Manage you AWS services 
+###### AWS SDK: Manage your AWS Services using a programming language
+###### Access Keys: access AWS using the CLI or SDK
+###### Audit: IAM Credential Reports & IAM Access Advisor
+
+*************************************************************************************************************************************************************************************************************************
+
+### Amazon EC2
+
+##### EC2 is one of the most popular of AWS offering
+##### EC2 = Elastic Compute Cloud = Infrastructure as a Service
+##### It mainly consists in the capability of :
+   1. Reting virtiual machines( EC2)
+   2. Storing data on virtual drives (EBS)
+   3. Distributing load across machines (ELB)
+   4. Scaling the services using an auto-scaling group (ASG)
+##### Knowing EC2 is fundamental to understand how the Cloud works
+
+#### EC2 sizing & configuration options
+###### Operating System(OS): Linux, Window or Mac OS
+###### How much compute power & cores (CPU) 
+###### How much random-access memory (RAM)
+###### How much storage space:
+      1. Network-attached (EBS & EFS)
+      2. hardware (EC2 Instance Store)
+###### Network card: speed of the card, Public IP address
+###### Firewall rules: security group
+###### Bootstrap Script (configure at first launch): EC2 User Data
+
+### EC2 User Data
+###### It is possible to bootstrap our instance using an EC2 user data script.
+###### bootstraping means launching commands when a machine starts
+###### The script is ony run once at the instance first start
+###### EC2 user data is used to automate boot tasks such as:
+   1. Installing updates
+   2. Installing software
+   3. Downloading common files from the internet
+   4. Anything you can think of
+##### The EC2 User Data Script runs with the root user.
+
+### EC2 instance types: example
+![image](https://github.com/user-attachments/assets/2b6578a9-92ea-4215-ac2f-ec408cc30871)
+
+
+      
+
 
 
 
