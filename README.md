@@ -134,6 +134,12 @@
 ###### Access Keys: access AWS using the CLI or SDK
 ###### Audit: IAM Credential Reports & IAM Access Advisor
 
+
+### AWS Budget Setup 
+-> root user -> Account -> IAm user and role access to Billing information (if its deactivated , activate it) 
+-> Budgets and planning -> Budgets -> create Budget -> Use a template (Simplified) -> Zero spend budget -> Budget name - My Zero-Spend Budget -> Email recipients <EmailId> -> create budget
+
+
 *************************************************************************************************************************************************************************************************************************
 
 ### Amazon EC2
@@ -171,6 +177,57 @@
 
 ### EC2 instance types: example
 ![image](https://github.com/user-attachments/assets/2b6578a9-92ea-4215-ac2f-ec408cc30871)
+
+> [!NOTE]
+> ### t2.micro is part of the AWS free tier (Up to 750 hours per month)
+
+
+#### Hands-On : Launching and EC2 Instance running Linux
+
+##### Wee'll be launching our firest virtual server using the AWS Console
+##### WE'll get a first hight-leel approach to various paramenters 
+##### We'll see that our server is lauched using EC2 use data
+##### We'll learn how to start / stop / terminate our instance
+
+-> Ec2 console -> Launch instances -> Name and tags <My First Instance> -> Quick Start <Amazon Linux> -> Free tier eligible (default) -> Architecture <64 bit(x86)>(default) ->Instance type <t2.micro> (default) -> key pair(login) -> create new keypair -> checkbox HTTP traffic from the internet -> Advanced Details -> User data <Scripts which need to execute on first launch> -> Launch Instance
+
+<Scripts which need to execute on first launch?
+```
+#!/bin/bash
+
+# Use this for your user data (script from top to bottom)
+
+# install httpd (Linux 2 version)
+
+yum update -y
+
+yum install -y httpd
+
+systemctl start httpd
+
+systemctl enable httpd
+
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+#### Instance Types
+https://aws.amazon.com/ec2/instance-types/
+
+* Instance Types
+   * General Purpose - for web server or code repo - balanced between compute, memorey, networking 
+   * Compute Optimized - for processing load - high performace web server - gaming server - ML and scentific models
+   * Memory Optimized - for fast performace for workloads that process large data sets in memory - optimized for BI - process big unstructed data
+   * Accelerated Computing
+   * Storage Optimized - for High freq online transaction processing system (OLTP) - relation & NOSQL Databases - data warehouse application
+   * HPC Optimized
+   * Instance Features
+   * Measuring Instance Performance
+ 
+#### AWS has the following naming convention:  m5.2xlarge
+- m: instance class
+- 5: generation (AWS improves them over time
+- 2xlarge: size within the instance class
+
 
 
       
