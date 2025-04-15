@@ -228,6 +228,87 @@ https://aws.amazon.com/ec2/instance-types/
 - 5: generation (AWS improves them over time
 - 2xlarge: size within the instance class
 
+#### Security Group
+##### Security groups are the fundamental of network security in AWS
+##### They control how traffic is allowed into or out of our EC2 Instance.
+![image](https://github.com/user-attachments/assets/9e4fc1e1-35cc-44f3-a5e9-68ebf60be96f)
+##### Security groups only contains rules
+##### Security groups rules can reference by IP or by security groups
+
+##### Security groups are acting as a "firewall" on EC2 rules
+* They regulate:
+     * Access to ports
+     * Authorised IP ranges - IPv4 and IPv6
+     * Control of inbound network (from other to the instance)
+     * Control on outbound network ( from the instance to other)
+![image](https://github.com/user-attachments/assets/fe3692fc-fe83-4cf9-9285-22dffb44edd4)
+
+#### Classic ports to know 
+* 22 = SSH(Secure Shell) - log into a Linux instance(allow to login EC2 instance on Linux)
+* 21 = FTP (File Transfer Protocol) - upload files into a file shares
+* 22 = SFTP (Secure File Transfer Protocol) -upload files using SSH
+* 80 = HTTP - access unsecured websites
+* 443 = HTTPS - access secured websties
+* 3389 = RDP (Remote Desktop Protocol ) - log into a windows instance
+
+#### SSH Summary Table   (allow to login EC2 instance on Linux)
+![image](https://github.com/user-attachments/assets/8e35a517-ea21-465a-aaf6-f378e93f0734)
+
+
+### How to SSH into your EC2 Instance
+
+##### SSH is one of the most important function. It allows you to control a remote machine, all using the command line.
+###### copy public IPv4 address from instance
+###### confirm the Inbound rules in security group [ port 22, protocol TCP, source 0.0.0.0/0] if not then edit and add rules
+###### You wanted to SSH into your EC2 instance using: open the folder where you saved your .pem file(key pair)
+```
+ssh -i .\firstInstance.pem ec2-user@13.51.70.152
+```
+###### amazon linux 2 AMI has one user already setup for use -> ec2-user, @ say that the user for that specific server
+![image](https://github.com/user-attachments/assets/2e67c971-6b56-48c7-999b-89b90781bad1)
+> [!CAUTION]
+>  This means the .pem file had too many permissions, making it insecure. SSH won’t allow that.
+> 
+##### ✅ You did the right thing using icacls, which is Windows' way of managing file permissions.
+
+```
+## For windows
+icacls .\firstInstance.pem /inheritance:r
+
+icacls .\firstInstance.pem /remove "Users" "BUILTIN\Users" "Everyone"
+
+icacls .\firstInstance.pem /grant:r "${env:USERNAME}:R"
+
+
+## For Linux/Mac
+chmod 0400 .\firstInstance.pem
+
+```
+| Command                            | What it Does                                                                 |
+|------------------------------------|------------------------------------------------------------------------------|
+| `/inheritance:r`                  | Removes inherited permissions (like from Desktop or parent folder)           |
+| `/remove ...`                     | Removes read access from all users/groups except your user                   |
+| `/grant:r "${env:USERNAME}:R"`    | Grants read-only permission to your current user       |
+| `$env:USERNAME`                   | Displays the username of the currently logged-in user in PowerShell          |
+
+##### ✅ Then You Tried SSH Again:
+```
+ssh -i .\firstInstance.pem ec2-user@<your-instance-public-ip>
+```
+##### ✅ Connected Sucessfully 🎉
+###### you can try some commands 
+``` whoami
+```
+![image](https://github.com/user-attachments/assets/e1ad3e77-1988-4c63-a2db-5a5779213947)
+```
+logout
+```
+##### ✅ Connection Closed🎉
+
+
+
+
+
 
 
       
