@@ -297,14 +297,16 @@ ssh -i .\firstInstance.pem ec2-user@<your-instance-public-ip>
 ```
 ##### ✅ Connected Sucessfully 🎉
 ###### you can try some commands 
-``` whoami
+```
+whoami
 ```
 ![image](https://github.com/user-attachments/assets/e1ad3e77-1988-4c63-a2db-5a5779213947)
 ```
 logout
 ```
 ##### ✅ Connection Closed🎉
-
+> [!TIP]
+> Your can do this same using putty ( .ppk )
 
 
 
