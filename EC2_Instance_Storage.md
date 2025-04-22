@@ -6,7 +6,7 @@
 |EFS (Elastic File System)|Shared file storage (like a network drive). Accessible from multiple EC2 instances at the same time. Great for shared data or microservices.|
 |FSx |High-performance managed file systems (e.g. FSx for Windows, FSx for Lustre) for specific workloads like Windows apps or HPC.|
 ***
-## EBS Volume
+## 1. EBS Volume
 
 ### What's an EBS Volume?
 
@@ -110,7 +110,7 @@
 ![image](https://github.com/user-attachments/assets/3fc02910-c03f-44d6-8194-d3bb9527114d)
 
 ***
-#### EC2 Instance Store
+#### 2. EC2 Instance Store
 ###### EBS volumes are network drives with good "limited" performace
 ###### If you need a high-performace hardware disk, use EC2 Instance store
 ###### Better I/O performace
@@ -119,7 +119,7 @@
 ###### Risk of data loss if harware fails
 ###### Backup and Replication are your responsibility
 ***
-#### EFS - Elastic File System
+#### 3. EFS - Elastic File System
 ###### Manged NFS (Netwrok file system) that can be mounted on 100s of EC2
 ###### EFS works with Linux  EC2 isntances in multi-AZ
 ###### Highly availabl, scalable, expensive (3x gp2), pay per use, no capacity planning
@@ -139,7 +139,7 @@
 
 ![image](https://github.com/user-attachments/assets/5c29c165-53c3-4f08-aabe-701155b7074a)
 
-### EFS Infrequent Access (EFS-IA)
+### 4. EFS Infrequent Access (EFS-IA)
 * Storage class that is cost-optimized  for files not accessed every day
 * Up to 92% lower cost compared to EFS Standard
 * EFS will automatically move your files to EFS-IA bbased on the last time they were accessed
@@ -150,3 +150,52 @@
 ### Shared Responsibility Model for EC2 Storage
 ![image](https://github.com/user-attachments/assets/ff4a59c0-1418-41c7-9bb2-3db1b5358dbb)
 
+***
+### Amazon FSx - Overview
+##### Launch 3rd party high-performace file system on AWS
+##### Fully managed service
+* FSx for Lustre
+* FSx for Windows File Server
+* FSx for NetApp ONTAP
+
+---
+* Amazon FSx for Window File Server
+  	* A fully managed, highly reliable, and scalable windows nativ shared file system
+  	* Build on Windows File  Server
+  	* Supports SMB protocol & windows NTFS
+  	* Integrated with microsoft Active Directory
+  	* Can be accessed from AWS or your on- premise infrastructure
+ 
+  * Amazon FSx for Lustre
+    	* A fully anaged, high-performace, scalable fiel storag for High Performace Computing (HPC)
+    	* The name Lustre is derived from "Linux" and "cluster"
+    	* Machine Learning, Analytics, Video processing, Financial Modeling,...
+    	* Scales up to 100s GB/s, millions of IOPS, sub-ms latencies
+
+***
+***
+# EC2 Instance Storage - Summary
+
+- **EBS volumes**:
+  - Network drives attached to one EC2 instance at a time
+  - Mapped to an Availability Zone
+  - Can use EBS Snapshots for backups / transferring EBS volumes across AZ
+
+- **AMI**: Create ready-to-use EC2 instances with your customizations
+
+- **EC2 Image Builder**: Automatically build, test, and distribute AMIs
+
+- **EC2 Instance Store**:
+  - High performance hardware disk attached to your EC2 instance
+  - Lost if the instance is stopped / terminated
+
+- **EFS**: Network file system, can be attached to 100s of instances in a region
+
+- **EFS-IA**: Cost-optimized storage class for infrequently accessed files
+
+- **FSx for Windows**: Network File System for Windows servers
+
+- **FSx for Lustre**: High Performance Computing Linux file system
+
+
+   
