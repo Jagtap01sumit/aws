@@ -139,7 +139,7 @@
 
 ![image](https://github.com/user-attachments/assets/5c29c165-53c3-4f08-aabe-701155b7074a)
 
-### 4. EFS Infrequent Access (EFS-IA)
+### EFS Infrequent Access (EFS-IA)
 * Storage class that is cost-optimized  for files not accessed every day
 * Up to 92% lower cost compared to EFS Standard
 * EFS will automatically move your files to EFS-IA bbased on the last time they were accessed
@@ -151,7 +151,7 @@
 ![image](https://github.com/user-attachments/assets/ff4a59c0-1418-41c7-9bb2-3db1b5358dbb)
 
 ***
-### Amazon FSx - Overview
+### 4. Amazon FSx - Overview
 ##### Launch 3rd party high-performace file system on AWS
 ##### Fully managed service
 * FSx for Lustre
