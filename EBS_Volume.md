@@ -14,10 +14,22 @@
 
 * Availability Zone(AZ) Lock 
 	* An EBS volume is locked to one Availability Zone.
-	* For
+
+	* For example: a volume created in us-east-1a cannot be directly used in us-east-1b.
+
+	* To move it, you need to:
+
+		* Take a snapshot (backup)
+
+		* Create a new volume in the other AZ from that snapshot
 
 
 * Capacity & Biling
+  	* When you create an EBS volume, you choose size (in GB) and optionally IOPS (speed).
+
+	* You pay for the full size you provision — even if you don’t use all of it.
+
+	* You can increase the size later if needed (but not reduce it).
 
 
 #### EBS Volume - Example
@@ -41,7 +53,8 @@
 ##### Not necessary to detach volume to do snapshot, but recommeded 
 ##### Can copy snapshots across AZ or Region
 
-Screenshot
+![image](https://github.com/user-attachments/assets/32973338-1356-4195-a579-9b4e56340005)
+
 
 #### EBS Snapshots Features
 * EBS snapshot Archive
