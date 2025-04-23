@@ -56,7 +56,7 @@
 
 ![image](https://github.com/user-attachments/assets/2bc1285f-0529-40d9-9591-0ea4b04ebf19)
 
-### Why use a load balancers ?
+#### Why use a load balancers ?
 * Spread load across multiple downstream instances
 * Expose a single point of access (DNS) to your applicatiohn
 * Seamlessly handle failures of downstream instances
@@ -64,7 +64,7 @@
 * Provide SSL termination (HTTPS) for your websites
 * High availability across zones
 
-### Why use an Elastic Load Balancer ?
+#### Why use an Elastic Load Balancer ?
 * An ELB (Elastic Load Balancer) is a managed load balancer
      *  AWS guarantees that it will be working
      *  AWS takes casreof upgrades, maintaince, high availability
@@ -77,6 +77,21 @@
       * Classic Load Balancer (retired in 2023) - Layer 4 & 7
 
 ![image](https://github.com/user-attachments/assets/e113b3b9-2b69-48e5-95aa-60423ed9078e)
+## Auto Scaling Group 
 
+#### What's an Auto Scaling Group ?
+* In real-life, the load on your websites and application can change
+* In the cloud, you can create and get rid of servers very quickly
+* The goal of an Auto Scaling Group (ASG) is to:
+    * Scale out (add EC2  instances) to match an increased load
+    * Scale in (remove EC2 instance) to match a decreased load
+    * Ensure we have a minimum and a maximum number of machines running
+    * Automatically register new instances to a load balancer
+    * Rplace unhealthy instances
+  * Cost savings: only run at an optimal capacity (principle of the cloud) 
+
+![image](https://github.com/user-attachments/assets/c155a6bf-31f6-497d-a869-928dec77f48d)
+
+![image](https://github.com/user-attachments/assets/57e2578c-507e-4ec5-b24b-579218d84be9)
 
 
