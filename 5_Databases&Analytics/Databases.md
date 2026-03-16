@@ -63,7 +63,8 @@ Databases & Shared Responsibility on AWS
 
 ## RDS Solution Architecture
 
-################################ss###############2.35##
+<img width="848" height="497" alt="image" src="https://github.com/user-attachments/assets/841013a0-8c93-4e9a-9425-a29fae3abbef" />
+
 
 ## Amazon Aurora
 - Aurora is a proprietary technology from AWS (not open sourced)
@@ -80,7 +81,8 @@ Databases & Shared Responsibility on AWS
 - Pay per second, can be more cost-effective
 - Use cases: good for infrequent, intermittent or unpredictable workloads...
 
-############################ss###################4.49#######
+<img width="476" height="428" alt="image" src="https://github.com/user-attachments/assets/69dbe183-1ae7-493d-9439-1fd2c8553d6b" />
+
 
 
 ## RDS Deployments: Read REplicas, Multi-AZ
@@ -89,20 +91,24 @@ Databases & Shared Responsibility on AWS
 	- Scale the read workload of your DB
 	- Can create up to 15 Read Replicas
 	- Data is only written to the main DB
-##############################ss####################1.46
+<img width="416" height="258" alt="image" src="https://github.com/user-attachments/assets/449159c1-0d6a-4e9d-ad85-faf10c324c1b" />
+
+
 - Multi-AZ
 	- Failover in case of AZ outage (high availability)
 	- Data is only read/written to the main database
 	- Can only have 1 other AZ as failover
 
-###############################ss##############2.09
+<img width="411" height="275" alt="image" src="https://github.com/user-attachments/assets/93944d3c-5459-4231-b7ab-0e1cb1c99e44" />
+
 
 ## RDS Deployents: Multi-Region
 - Multi-Region (Read Replicas)
 	- Disaster recovery in case of region issue
 	- Local performance of global reads
 	- Replication cose
-####################################ss############3.19
+<img width="922" height="482" alt="image" src="https://github.com/user-attachments/assets/87e30cde-73a0-46f1-915d-d459ef26dd67" />
+
 
 ## Amazon ElastiCache Overview
 - The same way RDS is to get managed Relational Databases..
@@ -113,7 +119,8 @@ Databases & Shared Responsibility on AWS
 
 ### ElastiCache
 - Solution Architecture - Cache
-######################################ss#####1.45
+<img width="892" height="430" alt="image" src="https://github.com/user-attachments/assets/7e04fbb5-4057-46a4-82ef-4adddfd1ddb9" />
+
 
 ## DynamoDB
 
