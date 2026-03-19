@@ -90,7 +90,9 @@ In Amazon Lambda:
 	- Pay per request and compute time
 	- Free tier of 10,000,000 AWS lambda requests and 4,00,000 GBs of compute time
 	- Integrated with the whole AWS suite of services
-	- Event-Driven: functions get invoked by AWS when nee``````````````````````
+	- Event-Driven: functions get invoked by AWS when needed
+   	- Integrate with many programming languages
+   	- Easy monitoring through AWS CloudWatch
 
 
 
