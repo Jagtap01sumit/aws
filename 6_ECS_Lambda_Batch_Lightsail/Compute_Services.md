@@ -24,9 +24,9 @@
 ### Docker versus Virtual Machines
 - Docker is "sort of" a virtualization technology, but not exactly
 - Resources are shared with host -> many containers on one server
+<img width="928" height="399" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056040 (1)" src="https://github.com/user-attachments/assets/c0028b27-ab31-448f-81c5-0730a7b0e6b1" />
 
 
-##########################112################3.06
 
 ## ECS
 - ECS = Elastic Container Services
@@ -35,22 +35,23 @@
 - AWS takes care of starting/stopping containers
 - Has integrations with the application Load Balancer
 
-##############################113############0.59
+<img width="575" height="599" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056046" src="https://github.com/user-attachments/assets/7a39a2fe-145f-467d-b482-cf82141957f3" />
+
 
 ### Fargate
 - Launch Docker containers on AWS
 - You do not provision the infrastructure (no EC2 instance to manage) - simpler!
 - Serverless offering
 - AWS just runs containers for you based on the CPU/RAM you need
+<img width="601" height="546" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056046 (1)" src="https://github.com/user-attachments/assets/fb002668-f145-4f3a-9fff-f9a105796fb2" />
 
-##############################113############2.00##
 
 ### ECR
 - Elastic Container Registry
 - Private Docker Registry on AWS
 - This is where you store your Docker images so they can be run by ECS or Fragate
+<img width="634" height="476" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056046 (2)" src="https://github.com/user-attachments/assets/4420cfc4-90b8-4dcc-935c-90d807502a80" />
 
-##############################113############2.48##
 
 ### Amazon EKS
 - EKS = Elastic Kubernetes Service
