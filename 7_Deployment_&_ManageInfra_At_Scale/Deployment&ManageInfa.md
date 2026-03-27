@@ -115,4 +115,112 @@ EC2, ASG, ELB, RDS, etc...
 - Developers usually store code in a repository, using the Gid technology
 - A famous public offering is GitHub, AWS competing product is CodeCommit
 - CodeCommit:
-	- 
+	- Source-control service that hosts Git-based repositories
+	- Make it easy to collaborate with others on code
+	- The code changes are automatically versioned
+Benefits:
+	- Fully managed
+	- Scalable & highly available
+	- Private, Secured, Integrated with AWS
+  ## AWS CodeBuild
+	- Code building service in the cloud(name is obvious)
+	- Compiles source code, run tests, and produces packages that are ready to be deployed (by CodeDeploy for example)
+	- Benefits:	
+		- Fully managed, serverless
+		- Continuously scalable & highly available
+		- Secure
+		- Pay-as-you-go pricing - only pay for the build time
+	
+  ## AWS CodePipeling
+	- Orchestrate the different steps to have the code automatically pushed to production
+		- Code => Build => Test=> Provision => Deploy
+		- Basic for CICD (Continue Integration & Continue Deliver)
+	- Benifits:
+		- Fully managed, compatible with codecommit, codebuild, codedeploy, elastic  beanstalk, cloudformation, GitHub, 3rd-party services (GitHub..) & custom plugins
+############################131#######1.07
+
+## AWS CodeArtifact
+- Software packages depends on each other to be built ( also called code dependencies), and new ones are created
+- Storing and retrieving these dependencies is called artifact management
+- Traditionally you need to setup your own artifact management system
+- CodeArtifact is a secure, scalable, and cost-effective artifact management for software development
+- Works with common dependency management tools such as Maven, Gradle, npm, yarn, twine, pip, and NuGet
+- Developers and CodeBuild can then retrieve dependencies straight from CodeArtifact
+
+
+## AWS System Manager (SSM)
+- Helps you manage your EC2 and On-Premises systems at scale 
+- Another Hybrid AWS service
+- Get operational insight about the state of your infrastructure
+- Suite of 10+ products
+- Most important features are :
+	- Patching automation for enhanced compliance
+	- Run commands across an entire fleet of servers
+	- Store parameter configuration with the SSM Parameter Store
+- Works for Linux, Windows, MacOS, and Raspberry Pi OS (Raspbian)
+
+### How Systems Manager works
+- We need to install the SSM agent onto the systems we control
+- Installed by default on Amazon Linux AMI & some ubuntu AMI
+- If an instance can't be controlled with SSM, it's probably an issue with the SSM agents!
+- Thanks to the SSM agent, we can run commands, patch & configure our servers
+
+### Systems Manager - SSM Session Manager
+- Allows you to start a secure shell on your EC2 and on-premises servers
+- No SSH access, bastion hosts, or SSH keys needed
+- No port 22 needed (Better security)
+- Support Linux, macOS, and Windows
+- send session log data to S3 or CloudWatch Logs
+##############################134#############0.52
+
+### System Manager Parameter Store
+- Secure storage for configuration and secrets 
+- API Keys, passowrds, configurations...
+- Serverless, scalable, durable, easy SDK
+- Control access permissions using IAM
+- Version tracking & encryption (optional)
+###################135#####0.49
+***
+
+### ✅ Ways to Access an EC2 Instance in AWS
+
+| # | Method                    | Port 22 Required | SSH Key Required | IAM Role Required | OS Requirement                | Key Points                                                                     |
+| - | ------------------------- | ---------------- | ---------------- | ----------------- | ----------------------------- | ------------------------------------------------------------------------------ |
+| 1 | **SSH (Traditional)**     | ✅ Yes            | ✅ Yes            | ❌ No              | Any supported OS              | Uses SSH keys and terminal access. Port 22 must be open in the security group. |
+| 2 | **EC2 Instance Connect**  | ✅ Yes            | ❌ No             | ❌ No              | Amazon Linux                  | AWS temporarily uploads SSH keys. Still requires port 22 to be open.           |
+| 3 | **Session Manager (SSM)** | ❌ No             | ❌ No             | ✅ Yes             | Amazon Linux 2 / supported OS | Most secure option. Uses IAM role and SSM agent. No inbound ports required.    |
+
+***
+
+## 🔐 Security Comparison
+
+| Method               | Network Ports    | Credential Management      | Works in Private Subnet | Security Level |
+| -------------------- | ---------------- | -------------------------- | ----------------------- | -------------- |
+| SSH                  | Port 22 open     | User‑managed SSH keys      | ❌ No                    | Medium         |
+| EC2 Instance Connect | Port 22 open     | Temporary AWS‑managed keys | ❌ No                    | Medium         |
+| Session Manager      | No inbound ports | IAM‑based access           | ✅ Yes                   | High ⭐         |
+
+***
+
+### One‑Line Summary
+
+> AWS provides three ways to access EC2 instances: traditional SSH using port 22 and keys, EC2 Instance Connect using temporary SSH keys with port 22, and Session Manager which uses IAM and SSM without opening any ports and is the most secure approach.
+
+
+## Deployement - Summary
+- CloudFormation: (AWS only)
+	- Infrastructure as Code, works with almost all of AWS resources
+	- Repeat across Regions & Accounts
+- Beanstalk (AWS only)
+	- Platform as a Service(PaaS),limited to certain programming languages or Docker
+	- Deploy code consistently with a known architecture, ALB+EC2+RDS
+- CodeDeploy(hybrid): deploy & upgrade any application onto servers
+- Systems Manager(hybrid):patch, configure and run commands at scales
+### Developer Services - summery
+- CodeCommit:Store code in private git repository (version controlled)
+- CodeBuild: Build & test code in AWS
+- CodeDeploy: Deploy code onto servers
+- CodePipeline: Orchestration of pipeline(from code to build to deploy)
+- CodeArtifact: Stroe software packages/dependencies on AWS
+- AWS CDK: Define your cloud infrastructure using a programming language
+ 
