@@ -68,3 +68,20 @@
     - Files are updated in near real-time
     - Read only
     - Great for dynamic content that needs to be available at low-latency in few regions
+### S3 Transfer Acceleration
+- Increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region
+  <img width="919" height="244" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056132" src="https://github.com/user-attachments/assets/0cd11c6d-f1f9-4bc0-aa63-fe76f6980679" />
+### AWS Global Accelerator
+- Improve global application availability and performance using the AWS global network
+- Leverage the AWS internal network to optimize the route to your application(60% improvement)
+- 2 Anycast IP are created for your application and traffic is sent through Edge locations
+- The Edge locations send the traffic to your application
+<img width="1126" height="586" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056140" src="https://github.com/user-attachments/assets/afdb297b-618c-431e-a653-236dd79753d1" />
+
+- This diagram shows what happens without a global accelerator , so you client to get to your application in your region can go through a lot of hops an lot of network and there could be latencies added to it. But if you use the Global Accelerator then you just connect to an Edge location to the region you're connecting to, it goes through the private AWS network, which is much faster.
+
+### AWS Global Accelerator vs CloudFront
+- They both use the AWS global network and its edge locations around the world
+- Both services integrate with AWS shield for DDOS protection.
+- CloudFront- CDN
+       - Improve
