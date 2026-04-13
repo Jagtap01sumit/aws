@@ -49,10 +49,11 @@
 - Schedule: Cron jobs (scheduled scripts)
 - Event Pattern: Event rules to react to a service doing something
 - Trigger lambda functions, send SQS/SNS notifications
+<img width="1159" height="600" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056214" src="https://github.com/user-attachments/assets/bfebf344-b23f-44d9-adf0-9b8ce790c47a" />
 
-##################161######1.46#######
 ### Amazon EventBridge
-##################161##############2.30
+
+<img width="1074" height="556" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056214 (1)" src="https://github.com/user-attachments/assets/21388e1b-b706-48bb-bd1a-dbd7f5828931" />
 
 ### AWS CloudTrail
 - Provides governance, compliance and audit for your AWS Account
