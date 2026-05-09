@@ -41,6 +41,33 @@
 - NAT Gateways(AWS-managed) & NAT Instances(self-managed) allow your instances in your Private subnets to access the internet while remaining private
 ##################172########2.30
 
+### Network ACL & Security Groups
+- NACL (Network ACL)
+  	- A firewall which controls traffic from and to subnet
+  	- Can have ALLOW and DENY rules
+  	- Are attached at the subnet level
+  	- Rules only include IP adresses
 
+- Security Groups
+  	- A firewall that controls traffic to and from an EC2 Instance
+  	- Can have only ALLOW rules
+  	- Rules include IP addresses and other security groups
+  <img width="1048" height="528" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056244" src="https://github.com/user-attachments/assets/8013cbf5-40ab-430a-9c21-c2a0e03a00e6" />
 
-
+### VPC Flow logs
+- Capture information about IP traffic going into your interfaces:
+  	- VPC Flow Logs
+  	- Subnet Flow logs
+  	- Elastic Network Interface Flow logs
+  - Helps to monitor & troubleshoot connectivity issues. Example:
+    	- Subnets to internet
+    	- Subnets to subnets
+  		- Internet to subnets
+  - Captures network information from AWS managed interface too: Elastic Load Balancers, ElasticCache, RDS, Aurora, etc...
+  -  VPC Flow logs data can go to S3, CloudWatch Logs, and Amazon Data Firehouse
+ 
+  ### VPC Peering
+  - Connect two VPC, privately using AWS network
+  - Make them behave as if they were in the same network
+  - Must not have overlapping CIDR(IP address range)
+  - VPC Peering connection is not trasitive (must be established for each VPC that need to communicate with one another)
