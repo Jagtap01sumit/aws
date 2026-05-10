@@ -66,8 +66,32 @@
   - Captures network information from AWS managed interface too: Elastic Load Balancers, ElasticCache, RDS, Aurora, etc...
   -  VPC Flow logs data can go to S3, CloudWatch Logs, and Amazon Data Firehouse
  
-  ### VPC Peering
+### VPC Peering
   - Connect two VPC, privately using AWS network
   - Make them behave as if they were in the same network
   - Must not have overlapping CIDR(IP address range)
   - VPC Peering connection is not trasitive (must be established for each VPC that need to communicate with one another)
+
+### VPC Endpoints
+  - Endpoints allow you to connect to AWS Services using a private network instead of the public www network
+  - This gives you enhanced security and lower latency to access AWS services
+  - VPC Endpoints Gateway: S3 & DynamoDB
+  - VPC Endpoint Interface: most services (Including S3 & DynamoDB)
+<img width="1048" height="528" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056244" src="https://github.com/user-attachments/assets/d93568e4-6373-4e92-a4c0-1d06f90c9df4" />
+
+### AWS PrivateLink (VPC Endpoint Services)
+- Most secure & scalable way to expose a service to 1000s of VPCs
+- Does not require VPC peering, internet gateway, NAT, route tables...
+<img width="1048" height="528" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056244" src="https://github.com/user-attachments/assets/8f57a015-c705-4497-8bb7-258cff4cd2e3" />
+### Site to Site VPN & Direct Connect
+- Site to Site VPN
+  	- Connect an on-premises VPN to AWS
+  	- The connection is automatically encrypted
+  	- Goes over the public internet
+- Direct Connect (DX)
+  	- Establish a physical connection between on-premises and AWS
+  	- The connection is private,secure and fast
+  	- Goes over a private network
+  	- Take at least a month to establish
+
+	<img width="1048" height="528" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056244" src="https://github.com/user-attachments/assets/1c0cd0cd-0dd6-46de-bd81-3142a99fcf22" />
