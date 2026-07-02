@@ -204,7 +204,7 @@
   - Assessment of functions as they are deployed
  
 - Reporting & integration with AWS Security Hub
-- Send findings to Amazon Event Bridge
+
 
 ### What does Amazon inspector evaluate?
 - Remember: only for EC2 instances, Container Images & Lambda functions
@@ -212,3 +212,103 @@
 - Package vulerabilities (EC2, ECR & Lambda) -database of CVE
 - Network reachability (EC2)
 - A risk score is associated with all vulnerabilites for prioritization
+
+
+## AWS Config
+- Helps with autditing and recording compliance of your AWS resources
+- Helps record configuration and changes over time
+- Possibility of storing the configuration data into S3 (analyzed by Athene)
+- Questions that can be solved by AWS Config:
+  - Is there unrestricted SSH access to my security groups?
+  - Do my buckets have any public access?
+  - How has my ALB configuration changed over tiem?
+- You can receive alerts (SNS notifications) for any changes
+- AWS Config is a per-region service
+- Can be aggregated across regions and accounts
+
+## Amazon Macie
+- Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
+- Macie helps identify and alert you to sensitive data, such as personally identifiable information(PII)
+
+## AWS Security Hub
+- Central security tool to manage security across serveral AWS accounts and automate security checks
+- Integrated dashboards showing current security and compliance status to quickly take actions
+- Automatically aggregates alerts in predefined or personal findings formats from various AWS services & AWS partner tools:
+  - Config
+  - GuardDuty
+  - Inspector
+  - Macie
+  - IAM Access Analyzer
+  - AWS Systems Manager
+  - AWS Firewall Manager
+  - AWS Health
+  - AWS Partner Network Solutions
+- Must first enable the AWS Config Service
+  <img width="1942" height="918" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_24682620" src="https://github.com/user-attachments/assets/f9f37cb5-56c3-4769-978a-f6f2f2fb42b2" />
+
+## Amazon Detective
+- GuardDuty, Macie, and Security Hub are used to identify potential secuity issues, or findings
+- Sometimes security findings require deeper analsis to isolate the root cause and take action - it's a complex process
+- Amazon Detective analyzes, investigates, and quickly identifies the root cause of security issues or suspicous activites (using ML and graphs)
+- Automatically collects and processes events from VPC Flow Logs, CloudTrail, GuardDuty and create a unified view
+- Produces visualizations with details and context to get to the root cause
+
+## AWS Abuse
+- Report suspected AWS resources used for abusive or illegal purposes
+- Abusive & prohibited behaviors are:
+  - Spam - receving undersired emails from AWS - owned IP address, websites & forums spammed by AWS resources
+  - Port sanning - sending packets to your ports to discover the unsecured oes
+  - DoS or DDoS attacks - AWS owned IP addresses attempting to overwhlem or crash your servers/softwares
+  - Intrusion attempts - loggin in on your resources
+  - Hosting objectionalbel or copyrighted content - distributing illegal or copyrighted content without consent
+  - Distributing malware - AWS resources distributing softwares to harm computers or machines
+- Contact the AWS Abuse tema: By form or email
+
+## Root user privileges
+- Root user = Account Owner (created when the account is created)
+- Has complete access to all AWS services and resources
+- Lock away your AWS account root user access key!
+- Do not use the root account for everyday tasks, even administrative tasks
+- Actions that can be performed ony by the root user:
+  - Change account setting (account name, email, root user password, root user access key)
+  - View certain tax invoices
+  - Close your AWS account Restore IAM user permissions
+  - Change or cancel your AWS support plan
+  - Register as a seller in the Reserved Instance Marketplace
+  - Configure an Amazon S3 bucket to enable MFA
+  - Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID
+  - Sign up for GovCloud
+ 
+## IAM Access Analyzer
+- Find out which resources are shared externally
+  - S3 Buckets
+  - IAM Roles KMS Keys
+  - Lambda FUnctions and Layers
+  - SQS queue
+  - Secrets Manger Secrets
+ 
+- Define Zone ofTrust = AWS Account or AWS Organization
+- Access outside zone of trusts => findings
+
+
+## Section Summary : Security & compliance
+- Shared Responsibility on AWS
+- Shield: Automatic DDos Protection + 24/7 support for advanced
+- WAF: Firewall to filter incoming requests based on rules
+- KMS: Encryption keys managed by AWS
+- CloudDuty : Find malicious behavior with VPC, DNS & cloudTrail Logs
+- Inspector: find software vulnerabilities in EC2, ECR Images, and Lambda functions
+- Network Firewall: Protect VPC against network attacks
+- Config : Track config changes and compliance against rules
+- Macie: Find sensitivve data(ex:PII data) in Amazon S3 buckets
+- CloudTrail: Track API calls made by users within the account
+- AWS Security Hub: gather security finding from multiple AWS accounts
+- Amazon Detective: find the root cause of security issues or suspicious activities
+- AWS Abuse: Report AWS resurces sused for abusive or illegal purpose
+- Root user privileges:
+  - Change account settings
+  - Close your AWS account
+  - Change or cancel your AWS Support plan
+  - Register as a seller in the Reserved Instance Market
+ - IAM Access Analyzer: idenityf which resources are shared externally
+ - Firewall Manager: manage security rules across an Organization (WAF, Shield...)
