@@ -1,4 +1,4 @@
-## Amazon Rekognition
+<img width="1834" height="910" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056424_start=75 (2)" src="https://github.com/user-attachments/assets/d9539871-97cf-4f61-8bc9-e6cb18ea214d" />## Amazon Rekognition
 - Find objects, people, text, scenes in images and videos using ML
 - Facial analysis and facial search to do user verification, people counting
 - Create a databbase of "Familiar faces" or compare against celebrities
@@ -95,3 +95,78 @@
 - Kendra : ML-powered search engine
 - Personalilze: real-time personalized recommendations
 - Textract: detect text and data in documents
+
+
+---
+---
+
+## AWS Organizations
+- Global service
+- Allow to manage multiple AWS accounts
+- The main account is the mast account
+- Cost Benefits:
+  - Consolidated Billing across all accounts - single payment method
+  - Pricing benefits from aggregated usage (volume discount for EC2, S3..)
+  - Pooling of Reserved EC2 instances for optimal savings
+- API is available to automate AWS account creation
+- Restrict account privileges using Service Control Policies (SCP)
+
+## Multi Account Strategies
+- Create accounts per department, per cost center, per dev /test/ prod, based on regulatory restrictions (using SCP), for better resourc isolation (ex:VPC), to have separated per-account service per-account service limits, isolated account for logging
+- Multi account vs One Account Multi VPC
+- Use tagging standards for billing purposes
+- Enable CloudTrail on all accounts, send logs to central S3 account
+- Send CloudWatch Logs to central logging account
+
+## Organizational Units (OU) - Examples
+<img width="2022" height="906" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056424_start=75" src="https://github.com/user-attachments/assets/1f0f51d1-3fb8-4da3-bcc8-af482795154d" />
+
+
+- AWS Organization
+  
+
+<img width="1894" height="980" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056424_start=75 (1)" src="https://github.com/user-attachments/assets/c7a7fc39-fea2-4530-aa89-ab1db10c3abe" />
+
+## Service Control Policies (SCP)
+- Whitelist or blacklist IAM actions
+- Applied at the OU or Account level
+- Does not apply to the Master Account
+- SCP is applied to all the Users and Roles of the Account, including Root
+- The SCP does not affect service-linked roles
+  - Service-linked roles enable other AWS services to integrate with AWS Organizations and cann't be restricted by SCP's
+- SCP must have an explicit Allows (does not allow anything by default)
+- Use cases:
+  - Restrict access to certain services (for example:can't use EMR)
+  - Enforce PCI compliance by explicitly disabling services
+<img width="1834" height="910" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056424_start=75 (2)" src="https://github.com/user-attachments/assets/30876dcc-cfbe-4403-8a35-7721de0587bf" />
+
+
+## AWS Organization - Consolidated Billing
+- When enabled, provides you with:
+  - Combine Usage - combined the usage across all AWS accounts in the AWS Organization to share the volume priing, Reserved Instances and Saving Plans discounts
+  - One Bill - get one bill for all AWS Accounts in the AWS Organization
+ 
+## AWS Control Tower
+- Easy way to setup and govern a secure and compliant multi-account AWS environment based on best practices
+- Benefits:
+  - Automate the setup of your environment in a few clicks
+  - Automate ongoing policy management using guardrails
+  - Detect policy violations and remediate them
+  - Monitor compliance through an interactive dashboard
+- AWS Control Tower runs on top of AWS Organizations:
+  - It automaticaly setup AWS Organizations to organize accounts and implement SCPs (Service Control Policies)
+
+## AWS Resource Access Manager (AWS RAM)
+- Share AWS resouces that you own with other AWS accounts
+- Share with any account or withihng your Organization
+- Avoid resource duplicaition!
+- Supported resources include Aurora, VPC Subnets, Transit Gateway, Route 53, EC2 Dedicated Hosts, License Maner Configuratiosn..
+
+## AWS Service Catalog 
+- Users that are new to AWS have too many options, and may create stacks that are not compliant / in with the rest of the organization
+- Some  users just want a quick self service portal to launch a set of authorized products pre-defined by admins
+- Includes: virtual machines, databases, storage options, etc..
+- Enter AWS Service Catalog!
+
+### Service Categlog diagram
+<img width="1846" height="1024" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_36566038" src="https://github.com/user-attachments/assets/133b6da9-4de6-4994-b90d-ff628036d4f6" />
