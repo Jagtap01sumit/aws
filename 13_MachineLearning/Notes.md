@@ -1,4 +1,4 @@
-<img width="1834" height="910" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056424_start=75 (2)" src="https://github.com/user-attachments/assets/d9539871-97cf-4f61-8bc9-e6cb18ea214d" />## Amazon Rekognition
+## Amazon Rekognition
 - Find objects, people, text, scenes in images and videos using ML
 - Facial analysis and facial search to do user verification, people counting
 - Create a databbase of "Familiar faces" or compare against celebrities
