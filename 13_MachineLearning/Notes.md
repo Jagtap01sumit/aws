@@ -170,3 +170,155 @@
 
 ### Service Categlog diagram
 <img width="1846" height="1024" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_36566038" src="https://github.com/user-attachments/assets/133b6da9-4de6-4994-b90d-ff628036d4f6" />
+
+
+## Pricing Models in AWS
+- AWS has 4 pricing models:
+  1. Pay as you go: pay for what you use, remain agile, responsive, meet scale demands
+  2. Save when you reserve: minimize risks, predictably manage budgets, comply with log - term requirements
+     - Reservations are available for EC2 Reserved Instances, DynamoDB Reserved Capacity, ElastiCache Reserved Nodes, RDS Reserved Instance, Redshift Reserved Nodes
+  3. Pay les by using more: volume-based discounts
+  4. Pay less as AWS grows
+ ### Free services & Free plan in AWS
+ - With a new AWS account, you get up to $200 in credits
+ - You choose between Free Plan or Paid Plan
+ - Free Plan expires in 6 months or when credits are consumed (no charges)
+ - Paid Plan charged after you consume your credits
+ - Both plans have access to Always Fee services
+   - Offers monthly free usage limit, for example:
+   - Lambda - 1million requests/month and 4 lakh GB seconds compute/month
+   - DynamoDB - 25 GB of storage and 200 M requests/month
+### Compute Pricing - EC2
+- Only charged for what you use
+- Number of instances
+- Instance configuration
+  - Physical capicity
+  - Region
+  - OS and Software
+  - Instance Type
+  - Instance Size
+- ELB running time and amount of data processed
+- Detailed monitoring
+
+### Compute Pricing - EC2
+- On-demand instances:
+  - Minimum of 60s
+  - Pay per second (Linux/Window) or per hour(other)
+ 
+- Reserved instances:
+  - Up to 75% discount compared to On-demand on hourly rate
+  - 1 or 3 years commitment
+  - All upfront, partial upfront, no upfront
+- Spot instnaces:
+  - Up to 90% discount compared to On-demand on hourly rate
+  - Bid for unused capaciyt
+- Dedicated Host:
+   - On-demand
+   - Reservation for 1 year or 3 years commitment
+- Savings plans as an alternative to save on sustained usage
+
+### Compute Pricing  - Lambda & ECS
+- Lambda:
+  - Pay per call
+  - Pay per duration
+- ECS:
+  - EC2 Launch Type Model: No additional fees, you pay for AWS resouces stored and created in your application
+- Fargate:
+  - Fargate Launch Type Model: Pay for vCPU and memory resources allocated to your applications in your containers
+
+
+ ### Storage Pricing - S3
+- Storage class : S3 Standard, S3 Infrequent Access, S3 One-Zone IA, S3 Intelligent Tiering, S3 Glacier and S3 Glacier Deep Archive
+- Number and size of object: Price can be tiered (based on volume)
+- Number and type of requests
+- Data transfer OUT of the S3 region
+- S3 Transer Acceleration
+- Lifecycle transitions
+
+- Similar service: EFS (pay per use, has infrequent access & life cycle rules)
+### Storage Pricing - EBS
+- Volume type (based on performace)
+- Storage volume in GB per month provisionned
+- IOPS:
+  - General Purpose SSD: Included
+  - Provisioned IOPS SSD: Provisionned amount in IOPS
+  - Magnetic: Number of requests
+- Snapshots:
+  - Added data cost per GB per month
+- Data transfer
+  - Outbound data transfer are tiered for volume discounts
+  - Inbound in free
+
+### Database Pricing - RDS
+- Per hour billing
+- Database characteristics
+  - Engine
+  - Size
+  - Memory class
+- Purchase type:
+  - On-demand
+  - Reserved instances(1 or 3 years ) with optional up-front
+- Backup Storage: There is no additional charge for backup storage up to 100% of your total database storage for a region
+- Additioanl storage (Per GB per month)
+- Number of input and output requests per month
+- Deployment type(storage and I/O are variable):
+  - Sigle AZ
+  - Multiple AZ
+- Data transfer:
+  - Outbound data transfer are tiered for volume discounts
+  - Inbound is free
+
+### Content Delivery - CloudFront
+- Pricing is different across different geographic regions
+- Aggregated for each edge location, then applied to your bill
+- Data Transfer Out(volume dicount)
+- Number of HTTP/HTTPS requests
+
+### Networking Costs in AWS per GB - Simplified
+<img width="1850" height="978" alt="www udemy com_course_aws-certified-cloud-practitioner-new_learn_lecture_20056378_start=225" src="https://github.com/user-attachments/assets/fee19bcf-1aae-4446-bd09-4c401e2fcc48" />
+
+## Savings Plan
+- Commit a certain $ amount per hour for 1 or 3 years
+- Easiest way to setup long-term commitments on AWS
+- EC2 Savings plan
+  - Up to 72% discount compared to on-demand
+  - Commit to usage of individual instance families in a region
+  - Regardless of AZ, size(m5xl to m5.4xl), OS or tenancy
+  - All upfront, partial upfront, no upfront
+- Compute Savings plan
+  - Up to 66% discount compared to On-Demand
+  - Regardless of Family, Region, size, OS, tenancy, compute options
+  - Compute Options:EC2, Fargate, lambda
+- Machine learning savings plan : sagemaker..
+- Setup from the aws const exploreer console
+
+
+## AWS compute optimizer
+- Reduce costs and imporve performance by recommending optimal AWS resources for your workloads
+- Helps you choose optimal configurations and right size your workloads(overunder provisioned)
+- Uses Machine Learning to analyze your resources configurations and their utilization CloudWatch metrics
+- Supported resourcees
+  - EC2 intances
+  - EC2 Autoschaling Groups
+  - EBS volumes
+  - Lambda functions
+- Lower your costs by up to 25%
+- Recommendations can be exported to S3
+
+## Billing and Costing Tools
+- Estimating costs in the cloud:
+  - Pricing Calculator
+- Tracing costs in the cloud:
+  - Billing Dashboard
+  - Cost allocation Tags
+  - Cost and Usage Reports
+  - Cost Explorer
+- Monitoring against costs plans:
+  - Billings Alarms
+  - Budgets
+### AWS Pricing Calculator
+- Available at https://calculator.aws/
+
+
+### AWS Billing Dashboards
+- Billing and cost management home
