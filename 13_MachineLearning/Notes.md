@@ -322,3 +322,40 @@
 
 ### AWS Billing Dashboards
 - Billing and cost management home
+
+### Cost and Usage Report
+- Dive deeper into your AWS costs and usage
+- The AWS cost & Usage Report contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations(e.g Amazon EC2 reserved instancces)(RIS)
+- The AWS Cost & Usage Reprot lists AWS usage for each service category used by an account and its IAM user in hourly or daily line items, as well as any tags you have activated for cost allocation purposes.
+- Can be integrated with Athena, Redshift or QuickSight
+
+#### Cost Explorer
+- Visualize, understand and mange your AWS costs and usage over time
+- Create custom repots that analyze cost and usage data
+- Analyzer your data at a high level: total costs and usage across all accounts
+- Or Monthly, hourly, resourdce level granularity
+- Choose an optimal Saving Plan(to lower prices on your bill)
+- Forecast usage up to 12 months based on previous usage
+
+### Billing alarms in CloudWatch
+- Billing data metric is stored in CloudWatch us-each-1
+- Billing data are for overall world wide AWS costs
+- Its for actual cost, not for projected costs
+- Inteded a simple alarm (not as powerful as AWS Budgets)
+### AWS Budgets
+- Create budget and send alarms when costs exceeds the budget
+- 4 types of budgets: Usage, Cost, Reservations, Savings Plans
+- For Reserved Instances (RI)
+  - Track utilization
+  - Supports EC2, ElastiCache, RDS, Redshift
+- Up to 5 SNS notifications per budget
+- Can filter by: service, linked account, tag, purchase option, instance
+- Type, Region, AZ, API Operation,etc..
+- Same options as AWS cost explorer!
+
+## AWS Cost Anomaly Detection
+- Continuously monitor your cost and usage using ML to detect unusual spends
+- It Learns your unique, historic spends patterns to detect one-time cost spike and /or continuous cost increseas(you dont need to define treesholds)
+- Monitor AWS services, member accounts, cost allocation tags, or cost categories
+- Send you the anomaly detection repot with root-cause analysis
+- Get notified with individual alerts or daily/weekly summary (using SNS)
