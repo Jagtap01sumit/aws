@@ -359,3 +359,64 @@
 - Monitor AWS services, member accounts, cost allocation tags, or cost categories
 - Send you the anomaly detection repot with root-cause analysis
 - Get notified with individual alerts or daily/weekly summary (using SNS)
+
+## Trusted Advisor
+- No need to insttall anything -igh level AWS account assessment
+- Analyze your AWS accounts and provides recommendation on 6 categories:
+  - Cost optimization
+  - Performance
+  - Security
+  - Fault tolerance
+  - Service limits
+  - Operational Excellence
+ 
+## AWS Basic Support Plan
+- Customer Service & Communities - 24x7 access to customer service, documentation, whitepapers, and support forums
+
+- AWS Trusted Advisor - Access to the 7 core Trusted Advisor checks and guidance to provision your resources following best practices to increase performance and improve security
+
+- AWS personal Health Dashboard - A Personalized view of the health of AWS services, and alerts swhen your resources are impacted
+
+### AWS Business Support + Plan (24/7)
+- Intended to be used if you have production workloads
+- Real time and contextual reponses through Generative AI
+- Trusted Advisor - Full set of checks + API access
+- 24x7 phone, web and chat access to Cloud Support Engineers
+- Unlimited cases/unlimited down cases
+- 3rd party sortware support (e.b, EC2 operating system like ubuntu)
+
+### AWS Enterprice Support Plan (24/7)
+- Intended to be used if you have production or business critical workloads
+- All of Business Support + Plan
+- Access to a designated Technical Account Manager (TAM)
+- Less than 15 minutes production-critical case response
+- Access to AWS Security Incident Response(helps you recover from sercurity incidents)
+- Business reviews from AWS experts
+- Access to AWS Countdown event management(specialize TAM-let support to help you succeed during critical business events)
+
+### AWS Unified Operationas Support Plan( 24/7)
+- Intended to be used if you have mission critical workloads
+- All of Business Support Plan +
+- Application Architecture Guidance - helps you desing architectures that fit your use case, workloads...
+- Short-term engagement with AWS support for deep understanding, analysis, then provide architectural guidance
+- Access to a designated:
+  - Technical account manager(TAM), Domain SPecialiset Engineer(DSE)
+  - Senior Billing and Account Specialist (SBAS), Incident Management Engineer(IME)
+  - Migration specialist (on-demand), Specialist Support Engineer(SSE)
+ 
+- Access to AWS Countdown premium and AWS Customer Incident Response Team(CIRT)
+- Critical workloads review, operational prcedures...
+
+## Account Best Practices - Summary
+- operate multiple accounts using Orgaizations
+- Use SCP(service control policies) to restric account power
+- Easily setup multiple accounts with best-practices with AWS Control Tower
+- Use Tags & Cost Allocation Tags for easy management & billing
+- IAM guideline: MFA, least-priilege, password policy, password rotation
+- Config to record all resources configurations & compliance over time
+- CloudFormation to deploy stacks across accounts and regions
+- Trusted Advisor to get insights, Support Plan adapted to your needs
+- Send Service Logs and Access Logs to S3 or CloudWatch Logs
+- CloudTrail to record API calls made within your account
+- If your Account is compromised: change the root password, delete and rotate all passwords/keys, contact the AWS support
+- Allow users to create pre-defined stacks defined by admins using AWS Service Catalog
