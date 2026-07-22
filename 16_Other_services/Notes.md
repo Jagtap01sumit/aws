@@ -69,3 +69,9 @@ AWS Amplify
 - Retention Periods, Lifecycle Management, Backup Policies,...
 - Cross-Region Backup
 - Cross-Account Backup (using AWS Organizations)
+
+## Disater Recovery Strategies
+- Backup & recovery ( cheapest ) (best)
+- Pilot light ( only core functions of the app ready to scale but minimal setup)
+- Warm Standby (full version of the app, but at minimum size)
+- Multi-site /Hot-Site( full version of the app at full size)
