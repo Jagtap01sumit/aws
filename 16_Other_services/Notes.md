@@ -75,3 +75,5 @@ AWS Amplify
 - Pilot light ( only core functions of the app ready to scale but minimal setup)
 - Warm Standby (full version of the app, but at minimum size)
 - Multi-site /Hot-Site( full version of the app at full size)
+
+## AWS Elastic Disaster Recovery (DRS)
