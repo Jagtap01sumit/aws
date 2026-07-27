@@ -77,3 +77,66 @@ AWS Amplify
 - Multi-site /Hot-Site( full version of the app at full size)
 
 ## AWS Elastic Disaster Recovery (DRS)
+- Used to be named "CloudEndure Disaster Recovery"
+- Quickly and easily recover your physical, virtual, and cloud-based servers into AWS
+- Example: protect your most critical databases (including Oracles, MySQL, and SQL Server), enterprice apps (SAP), protect your data from ransomware attacks,...
+- Continue block-level replication for your servers
+
+## AWS DataSync
+- Move large amount of data from on-premises to AWS
+- Can synchronize to: Amazon S3(any storage classes - including Glacier), Amazon EFS, Amazon FSx for Windows
+- Replication tasks can be scheduled hourly, daily, weekly
+- The replication tasks are incremental after the first full load
+
+## Cloud Migration Strategies: The 7Rs
+- Retire
+  - Turn off things you don't need (maybe as a result of Re-architecting)
+  - Helps with reducing the surface areas for attacks(more security)
+  - Save cost, may up to 10% to 20%
+  - Focus your attention on resources that must be maintained
+- Retain
+  - Do nothing for now (it's still a decision to make in a Cloud Migration)
+  - Security, data compliance, performance, unresolved dependencies
+  - No business value to migrate, mainframe or mid-range and non-x86 Unix apps
+- Relocate
+  - Move apps from on-premises to its Cloud version
+  - Move EC2 instances to a different VPC, AWS account or AWS Region
+  - Example: transfer servers from VMware Software-defined Data Center (SSDC)to VMware Cloud on AWS
+- Rehost "lift and shift"
+  - Simple migrations by re-hosting on AWS (applications, databases,data...)
+  - Migrate machines (physical, virtual, another Cloud) to AWS Cloud
+  - No cloud optimizations being done, applications is migrated as is
+  - Cloud save as much as 30% on cost
+  - Example: Migrate using AWS Application Migration Service
+ 
+- Replateform "lift and reshape"
+  - Example: migrate your database to RDS
+  - Example: migrate your application to Elastic Beanstalk
+  - Not changing to core architecture, but leverage some Cloud Optimizations
+  - Save time and money by moving to a fully managed service or Serverless
+ 
+- Repurchase "drop and shop"
+  - Moving to a different product while moving to the cloud
+  - Often you move to a SaaS Platform
+  - Expensive in the short term, but quick to deploy
+  - Example: CRM to Salesforce.com, HR to Workday, CMS to Drupal
+- Refactor/ Re-architect
+  - Reimaging how the application is architected using Cloud Native features
+  - Driven by the need of the business to add features and improve scalability, performance, security, and agility
+  - Move from a monolithic application to micro-services
+  - Example: move an application to Serverless architecture, use AWS S3
+ 
+## AWS Application Discovery Service
+- Plan migration projects by gathering information about on-premises data centers
+- Server utilization data and dependency mapping are important for migrations
+- Agentless Discovery(AWS Agentless Discovery connector)
+  - VM inventory, configuration, and performance history such as CPU, memory and disk usage
+- Agent-based Discovery (AWS Applicaton Discovry Agent)
+  - System configuration, system performance, running processses, and details of the network connections between systems
+- Resulting data can be viewed within AWS Migration Hub
+### AWS applicaton Migration Service (MGN)
+- The "AWS evolution" of CloudEndure MIgration, replcing AWS server Migration Service (SMS)
+- Lift-and-shift (rehost) solution which simplify migration applications to AWS
+- Converts your physical,virtual, and cloud-based migration to run natively on AWS
+- Minimal downtime, reduce costs
+- Support wide range of platforms, os, and db
