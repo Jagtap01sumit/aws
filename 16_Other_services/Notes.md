@@ -140,3 +140,43 @@ AWS Amplify
 - Converts your physical,virtual, and cloud-based migration to run natively on AWS
 - Minimal downtime, reduce costs
 - Support wide range of platforms, os, and db
+## AWS Migration Hub
+- Central location to collect servers and applications inventory data for the assessment, planning and tracking of migration to AWS
+- Helps accelerate your migration to AWS, automate lift- and- shift
+- AWS Migration Hub Orchestrator - Porvides pre-built templates to save time and effort migrating enterprise apps (e.g., SAP, Microsoft SQL Server..)
+- Supports migrations status updates from Application Migration Service (MGN) and Database Migration Service (DMS)
+<img width="1060" height="235" alt="image" src="https://github.com/user-attachments/assets/f29017ad-7bf0-40fd-9a4a-41b61e0fe71c" />
+
+## AWS Fault Injection Simulator (FIS)
+- A fully managed service for running fault injection experiments on AWS workloads
+- Based on Chaos Engineering - stressing an application by creating disruptive events (e.g., sudden increase in CPU or memory), observing how the system responds, and implementing improvements
+- Helps you uncover hidden bugs and performance bottlenecks
+- Supports the following AWS services: EC2, ECS, EKS, RDS...
+- Use pre-building templates that generate the desired disruptions
+<img width="1096" height="240" alt="image" src="https://github.com/user-attachments/assets/ab69e488-357d-473d-89e9-53afae2d4012" />
+
+## AWS Step Functions
+- Build serverless visual workflow to orchestrate your lambda functions
+- Features: sequence, parallel, conditions, timeouts, error handling,...
+- Can integrate with EC2, ECS, On-premises servers, API Gateway, SQS queues, etc..
+- Possibility of implementing human approval feature
+- Use cases: order fulfillment, data processing, web applications, any workflow
+
+## AWS Ground Station
+- Fully managed service that lets you control satellite communications, process data, and scale your satellite operations
+- Provides a global network of satellite ground stations near AWS regions
+- Allows you to download satellite data to your AWS VPC within seconds
+- Send satellite data to S3 or EC2 instance
+- Use cases: weather forecasting, surface imaging, communications, video broadcasts
+<img width="455" height="595" alt="image" src="https://github.com/user-attachments/assets/670111c8-6c16-4cc1-8f83-251954627aa1" />
+## Amazon Pinpoint
+- Scalable 2-way (outbound/inbound) marketing communications service
+- Supports email, SMS, push, voice, and in-app messaging
+- Ability to segment and personalize messages with the right content to customers
+- Possibility to receive replies
+- Scales to billions of messages per day
+- Use cases: run campaigns by sending marketing, bulk, transactional SMS meessages
+- Versus Amazon SNS or Amazon SES
+  - In SNS & SES you managed each message's audience, content, and delivery schedule
+  - In Amazon Pinpoint, you create message templates, delivery schedules, highly-targeted segments, and full campaigns
+<img width="417" height="590" alt="image" src="https://github.com/user-attachments/assets/4aa37a17-a66f-48a4-b523-1ef256487372" />
