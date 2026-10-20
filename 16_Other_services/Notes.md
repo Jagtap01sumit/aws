@@ -169,6 +169,7 @@ AWS Amplify
 - Send satellite data to S3 or EC2 instance
 - Use cases: weather forecasting, surface imaging, communications, video broadcasts
 <img width="455" height="595" alt="image" src="https://github.com/user-attachments/assets/670111c8-6c16-4cc1-8f83-251954627aa1" />
+
 ## Amazon Pinpoint
 - Scalable 2-way (outbound/inbound) marketing communications service
 - Supports email, SMS, push, voice, and in-app messaging
@@ -177,6 +178,6 @@ AWS Amplify
 - Scales to billions of messages per day
 - Use cases: run campaigns by sending marketing, bulk, transactional SMS meessages
 - Versus Amazon SNS or Amazon SES
-  - In SNS & SES you managed each message's audience, content, and delivery schedule
-  - In Amazon Pinpoint, you create message templates, delivery schedules, highly-targeted segments, and full campaigns
+   - In SNS & SES you managed each message's audience, content, and delivery schedule
+   - In Amazon Pinpoint, you create message templates, delivery schedules, highly-targeted segments, and full campaigns
 <img width="417" height="590" alt="image" src="https://github.com/user-attachments/assets/4aa37a17-a66f-48a4-b523-1ef256487372" />
